@@ -1,5 +1,170 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 body{
     cursor: default;
+}
+
+.signupbgimg{
+    position: absolute;
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    top: 4vh;
+    left: 44vw;
+}
+
+.img{
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.musicart{
+    font-family: 'Roboto' , sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0em;
+    color: #2E0052;
+    margin-top: 1vh;
+}
+
+.container{
+    position: absolute;
+    top: 15vh;
+    left: 37vw;
+    width: 26vw;
+    height: fit-content;
+    border-radius: 1.3rem;
+    border: 0.18rem solid #D9D9D9;
+}
+
+.containertitle{
+    margin-top: 1.5vh;
+    margin-left: 2vw;
+    font-family: 'Roboto' , sans-serif;
+    font-size: 1.5rem;
+    font-weight: 450;
+    letter-spacing: 0em;
+    color: black;
+}
+
+.yourname{
+    margin-left: 2vw;
+    font-family: 'Roboto' , sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0em;
+    color: black;
+    margin-top: 0.5vh;
+}
+
+input[type='text']{
+    border-radius: 0.5rem;
+    border: 0.125rem solid #B6B6B6;
+    padding-left: 0.5vw;
+    outline: none;
+    width: 21vw;
+    margin-left: 2vw;
+    margin-top: 0.1vh;
+}
+
+input[type='password']{
+    border-radius: 0.5rem;
+    border: 0.125rem solid #B6B6B6;
+    padding-left: 0.5vw;
+    outline: none;
+    width: 21vw;
+    margin-left: 2vw;
+    margin-top: 0.1vh;
+}
+
+.authmobile{
+    width : 21.5vw;
+    height: fit-content;
+    font-family: 'Roboto' , sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0em;
+    color: #000000;
+    margin-left: 2vw;
+    margin-top: 0.5vh;
+}
+
+.continue{
+    margin-left: 2vw;
+    margin-top: 1vh;
+    border-radius: 0.5rem;
+    background: #2E0052;
+    text-align: center;
+    width: 17.7vw;
+    height: 4vh;
+    font-family: 'Roboto' , sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0em;
+    color: white;
+    padding-top: 1vh;
+}
+
+.agree{
+    margin-top: 1.8vh;
+    margin-left: 2vw;
+    font-family: 'Roboto' , sans-serif;
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0em;
+    color: #000000;
+    width: 21vw;
+    height: fit-content;
+    padding-bottom: 2.5vh;
+}
+
+.already{
+    position: absolute;
+    bottom: 10vh;
+    left: 43vw;
+    display: flex;
+}
+
+.account{
+    font-family: 'Roboto' , 'sans-serif';
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0em;
+    color: #000000;
+}
+
+.signin{
+    font-family: 'Roboto' , 'sans-serif';
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0em;
+    color: #000000;
+    cursor: pointer;
+}
+
+.bottom{
+    position: absolute;
+    bottom : 0vh;
+    width: 100vw;
+    height: 5vh;
+    background: #2E0052;
+    color: #FFFFFF;
+    font-family: 'Roboto' , sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0em;
+    text-align: center;
+    padding-top: 2vh;
+}
+
+.showerror{
+    width: fit-content;
+    height: fit-content;
+    font-family: 'Inter' , sans-serif;
+    font-size: 0.5rem;
+    font-weight: 500;
+    letter-spacing: 0em;
+    margin-left: 2vw;
+    color: #FF0000;
 }
