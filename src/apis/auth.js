@@ -1,10 +1,10 @@
 import axios from "axios";
 const backendUrl = process.env.REACT_APP_BACKEND_URI;
 
-export const signupUser = async({ name, mobile , email, password }) => {
+export const signupUser = async ({ name, mobile, email, password }) => {
     try {
         const requestUrl = `${backendUrl}/auth/signup`;
-        const requestPayload = { name, mobile , email, password };
+        const requestPayload = { name, mobile, email, password };
         console.log(requestUrl);
         const response = await axios.post(requestUrl, requestPayload);
         return response.data;
@@ -13,10 +13,10 @@ export const signupUser = async({ name, mobile , email, password }) => {
     }
 }
 
-export const loginUser = async({ email, password }) => {
+export const loginUser = async ({ emailormobile, password }) => {
     try {
         const requestUrl = `${backendUrl}/auth/login`;
-        const requestPayload = {  email, password };
+        const requestPayload = { emailormobile, password };
         const response = await axios.post(requestUrl, requestPayload);
         return response.data;
     } catch (error) {

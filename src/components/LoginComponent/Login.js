@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Login.module.css';
 import signupimg from '../../assets/images/signupimg.png';
-import toast , { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
@@ -19,7 +19,7 @@ export default function Login() {
         <input type='text' spellCheck={false} required />
         <div className={styles.yourname}>Password</div>
         <input type='password' spellCheck={false} required />
-        <div className={styles.continue}>Continue</div>
+        <div className={styles.continue}>Continue</div><Toaster />
         <div className={styles.agree}>
           By continuing, you agree to Musicart privacy notice and conditions of use.
         </div>
@@ -29,7 +29,7 @@ export default function Login() {
         <div className={styles.newmusicart}>New to Musicart?</div>
         <div className={styles.line}></div>
       </div>
-      <div className={styles.acc} onClick={()=>{navigate('/signup')}}>Create your Musicart account</div>
+      <div className={styles.acc} onClick={() => { navigate('/signup') }}>Create your Musicart account</div>
       <div className={styles.bottom}>Musicart | All rights reserved</div>
     </>
   )
