@@ -44,7 +44,7 @@ export default function SignUp() {
 
     if (formdata.name) {
       if (!formdata.name.trim() || !/^[A-Za-z\s]+$/.test(formdata.name)) {
-        Setname('Please provide a valid name');
+        Setname('*Please provide a valid name');
         document.getElementById('username').style.borderColor = '#FF0000';
         c = false;
       }
@@ -58,7 +58,7 @@ export default function SignUp() {
 
     if (formdata.email) {
       if (!formdata.email.trim() || !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formdata.email.replace(/\s/g, ''))) {
-        Setemail('Please provide a valid email address');
+        Setemail('*Please provide a valid email address');
         document.getElementById('useremail').style.borderColor = '#FF0000';
         c = false;
       }
@@ -73,7 +73,7 @@ export default function SignUp() {
     if (formdata.mobile) {
       const pattern = new RegExp(/^\d{10,12}$/);
       if (!formdata.mobile.trim() || !pattern.test(formdata.mobile)) {
-        Setmobile('Please provide a valid mobile no.');
+        Setmobile('*Please provide a valid mobile no.');
         document.getElementById('usermobile').style.borderColor = '#FF0000';
         c = false;
       }
@@ -87,7 +87,7 @@ export default function SignUp() {
 
     if (formdata.password) {
       if (!formdata.password.trim()) {
-        Setpassword('Please provide a valid password');
+        Setpassword('*Please provide a valid password');
         document.getElementById('userpassword').style.borderColor = '#FF0000';
         c = false;
       }
@@ -104,7 +104,6 @@ export default function SignUp() {
     else {
       localStorage.setItem("token", response.token);
       localStorage.setItem("username", response.name);
-      localStorage.setItem("password", formdata.password);
       localStorage.setItem("userid", response.userid);
       toast.success(response.message, { duration: 2000 });
       setTimeout(success, 3000);
@@ -117,12 +116,18 @@ export default function SignUp() {
 
   return (
     <>
+      <div className={styles.navbar}></div>
+      <div className={styles.welcome}>Welcome</div>
       <div className={styles.signupbgimg}>
         <img src={signupimg} alt='' className={styles.img} />
         <div className={styles.musicart}>Musicart</div>
       </div>
       <div className={styles.container}>
-        <div className={styles.containertitle}>Create Account</div>
+        <div style={{ display: 'flex' }}>
+          <div className={styles.containertitle}>Create Account</div>
+          <div className={styles.dot}>.</div>
+          <div className={styles.noaccount}>Don’t have an account?</div>
+        </div>
         <div className={styles.yourname}>Your name</div>
         <input type='text' id='username' spellCheck={false} onChange={handlechange} name='name' value={formdata.name} required />
         <div className={styles.showerror}>{name}</div>
