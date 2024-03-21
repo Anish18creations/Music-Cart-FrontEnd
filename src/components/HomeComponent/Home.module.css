@@ -19,7 +19,7 @@ body {
 }
 
 .phoneno {
-    font-family: 'Roboto' , sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 0.8rem;
     font-weight: 500;
     color: white;
@@ -27,8 +27,8 @@ body {
     margin-left: 1vw;
 }
 
-.off{
-    font-family: 'Roboto' , sans-serif;
+.off {
+    font-family: 'Roboto', sans-serif;
     font-size: 0.8rem;
     font-weight: 500;
     color: white;
@@ -36,8 +36,8 @@ body {
     margin-left: 25vw;
 }
 
-.line{
-    font-family: 'Roboto' , sans-serif;
+.line {
+    font-family: 'Roboto', sans-serif;
     font-size: 1.1rem;
     font-weight: 500;
     color: white;
@@ -45,8 +45,8 @@ body {
     margin-left: 1vw;
 }
 
-.shopnow{
-    font-family: 'Roboto' , sans-serif;
+.shopnow {
+    font-family: 'Roboto', sans-serif;
     font-size: 0.8rem;
     font-weight: 500;
     color: white;
@@ -54,19 +54,19 @@ body {
     margin-left: 1vw;
 }
 
-.title{
+.title {
     position: absolute;
     top: 8vh;
     left: 4.7vw;
     display: flex;
 }
 
-.signupimg{
+.signupimg {
     width: 2rem;
     height: 2rem;
 }
 
-.musicart{
+.musicart {
     font-family: 'Roboto', sans-serif;
     font-size: 1.5rem;
     font-weight: 500;
@@ -76,16 +76,16 @@ body {
     margin-left: 0.3vw;
 }
 
-.home{
+.home {
     margin-left: 1vw;
     margin-top: 1.8vh;
-    font-family: 'Roboto' , sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 0.9rem;
     font-weight: 450;
     color: #000000;
 }
 
-.ad{
+.ad {
     position: absolute;
     top: 17vh;
     left: 4.7vw;
@@ -96,10 +96,10 @@ body {
     height: 18vh;
 }
 
-.grab{
+.grab {
     margin-left: 3vw;
     margin-top: 0.8vw;
-    font-family: 'Roboto' , sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 2.4rem;
     font-weight: 500;
     color: #2E0052;
@@ -107,14 +107,14 @@ body {
     height: fit-content;
 }
 
-.bgimage{
+.bgimage {
     position: absolute;
     top: 13vh;
     right: 8vh;
     height: 22vh;
 }
 
-.searchbar{
+.searchbar {
     position: absolute;
     top: 37vh;
     left: 4.7vw;
@@ -125,18 +125,18 @@ body {
     height: 4vh;
 }
 
-.search{
+.search {
     padding-left: 0.5vw;
     padding-top: 0.5vh;
     width: 2vw;
     height: 3vh;
 }
 
-input[type='text']{
+input[type='text'] {
     width: 80vw;
     border: none;
     outline: none;
-    font-family: 'Roboto' , sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     height: fit-content;
@@ -145,14 +145,15 @@ input[type='text']{
     margin-top: 0.4vh;
 }
 
-.filteringarea{
+.filteringarea {
     position: absolute;
     top: 44vh;
     left: 4.7vw;
     display: flex;
 }
 
-.grid , .list {
+.grid,
+.list {
     width: 1.5rem;
     height: 1.5rem;
 }
@@ -161,7 +162,7 @@ input[type='text']{
     margin-left: 0.2vw;
 }
 
-.bottom{
+.bottom {
     position: absolute;
     bottom: 0vh;
     width: 100vw;

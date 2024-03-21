@@ -38,7 +38,7 @@ export default function Home() {
       <div className={styles.filteringarea}>
         <img src={gridview} alt='' className={styles.grid} />
         <img src={listview} alt='' className={styles.list} />
-        <img src='https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQzGfmdQc8OsL5yDAlDrLiyw-Q6YrRsh9mriEDoxq-hrau58mMTIRJnXfv1zw5r2HN1Lg5f__ort5w1LW8d4f9s4DgV_6mV'
+        <img src='https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRzeZy0fW94mtuxCm2_z0NHZ_FeiD_Domr3_C1WgmzpKMwZO4vxkTr4rwlMXCJ_9cMjOAy5klwEqD_tVJYs4GTvNXYqRo0lfg'
           style={{ marginLeft: '2vw', width: '30vw', height: '50vh' }} alt='' />
       </div>
       <div className={styles.bottom}>Musicart | All rights reserved</div>
