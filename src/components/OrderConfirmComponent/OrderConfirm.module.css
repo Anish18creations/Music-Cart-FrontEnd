@@ -4,7 +4,9 @@ body {
     cursor: default;
 }
 
-.signupbgimg {
+@media (min-width: 361px) {
+
+.signupbgimg2 {
     display: flex;
     width: fit-content;
     height: fit-content;
@@ -12,12 +14,12 @@ body {
     margin-left: 4vw;
 }
 
-.music{
+.music2{
     width: 2.5rem;
     height: 2.5rem;
 }
 
-.title{
+.title2{
     font-family: 'Roboto' , sans-serif;
     font-size: 1.8rem;
     font-weight: 600;
@@ -90,4 +92,125 @@ body {
     height: fit-content;
     color: #FFFFFF;
     text-align: center;
+}
+
+.navbar , .confirm2 , .confirm3 {
+    display: none;
+}
+}
+
+@media (max-width: 360px) {
+
+.confirm , .signupbgimg2 , .music2 , .title2{
+    display: none;
+}
+
+.navbar{
+    width: 100vw;
+    background: #2E0052;
+    height: fit-content;
+    margin-top: 0vh;
+    padding-top: 0.5vh;
+}
+
+.signupbgimg {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    margin-left: 4vw;
+    padding-bottom: 0.5vh;
+}
+
+.music{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.title{
+    font-family: 'Roboto' , sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    margin-left: 0.5vw;
+    margin-top: 0.5vh;
+}
+
+.container{
+    margin-top: 15vh;
+    margin-left: 4vw;
+    width: 92vw;
+    height: 55vh;
+    border: 0.18rem solid #E3E3E3;
+    border-radius: 0.5rem;
+    box-shadow: 0.8rem 1rem 1.4rem 0.125rem #0000001C;
+}
+
+.bottom{
+    position: absolute;
+    bottom: 0vh;
+    width: 100vw;
+    height: 5vh;
+    background: #2E0052;
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0em;
+    text-align: center;
+    padding-top: 2vh;
+}
+
+.confetti{
+    margin-top: 7.5vh;
+    margin-left: 40vw;
+    width: 3rem;
+    height: 3rem;
+}
+
+.success{
+    margin-top: 2vh;
+    margin-left: 18vw;
+    font-family: 'Roboto' , sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #000000;
+}
+
+.confirm2{
+    font-family: 'Roboto' , sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: 1vh;
+    margin-left: 7vw;
+    color: #969696;
+    width: 80vw;
+    height: fit-content;
+}
+
+.confirm3{
+    font-family: 'Roboto' , sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: 0.5vh;
+    margin-left: 35vw;
+    color: #969696;
+    width: 25vw;
+}
+
+.home{
+    margin-top: 5vh;
+    margin-left: 7vw;
+    width: 78vw;
+    border-radius: 0.3rem;
+    background: #2E0052;
+    font-family: 'Roboto' , sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
+    height: fit-content;
+    color: #FFFFFF;
+    text-align: center;
+}
+
 }

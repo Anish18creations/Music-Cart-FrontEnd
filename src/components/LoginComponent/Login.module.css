@@ -60,17 +60,6 @@ body {
         margin-top: 1.5vh;
     }
 
-    /*input[type='text'] {
-        border-radius: 0.5rem;
-        border: 0.125rem solid #B6B6B6;
-        padding-left: 0.5vw;
-        outline: none;
-        width: 21vw;
-        height: 4vh;
-        margin-left: 2vw;
-        margin-top: 1vh;
-    }*/
-
     .demo {
         border-radius: 0.5rem;
         border: 0.125rem solid #B6B6B6;
@@ -81,10 +70,6 @@ body {
         margin-left: 2vw;
         margin-top: 1vh;
     }
-
-    /*#emailormobile{
-        width: 21vw;
-    }*/
 
     .dem {
         border-radius: 0.5rem;
