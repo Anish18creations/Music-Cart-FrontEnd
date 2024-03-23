@@ -93,11 +93,11 @@ export default function Login() {
         </div>
         <div className={styles.yourname}>Enter your email or mobile number</div>
         <input type='text' spellCheck={false} required onChange={handlechange} name='emailormobile'
-          value={formdata.emailormobile} id='emailormobile' />
+          value={formdata.emailormobile} id='emailormobile' className={styles.demo} />
         <div className={styles.showerror}>{emailormobile}</div>
         <div className={styles.yourname}>Password</div>
         <input type='password' spellCheck={false} required onChange={handlechange} name='password'
-          value={formdata.password} id='password' />
+          value={formdata.password} id='password' className={styles.dem} />
         <div className={styles.showerror}>{password}</div>
         <div className={styles.continue} onClick={() => login()}>Continue</div><Toaster />
         <div className={styles.agree}>

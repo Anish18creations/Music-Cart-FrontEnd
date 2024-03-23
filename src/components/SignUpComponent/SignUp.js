@@ -129,16 +129,16 @@ export default function SignUp() {
           <div className={styles.noaccount}>Don’t have an account?</div>
         </div>
         <div className={styles.yourname}>Your name</div>
-        <input type='text' id='username' spellCheck={false} onChange={handlechange} name='name' value={formdata.name} required />
+        <input type='text' id='username' spellCheck={false} onChange={handlechange} name='name' value={formdata.name} className={styles.dem} required />
         <div className={styles.showerror}>{name}</div>
         <div className={styles.yourname}>Mobile number</div>
-        <input type='text' id='usermobile' spellCheck={false} onChange={handlechange} name='mobile' value={formdata.mobile} required />
+        <input type='text' id='usermobile' spellCheck={false} onChange={handlechange} name='mobile' value={formdata.mobile} className={styles.dem} required />
         <div className={styles.showerror}>{mobile}</div>
         <div className={styles.yourname}>Email Id</div>
-        <input type='text' id='useremail' spellCheck={false} onChange={handlechange} name='email' value={formdata.email} required />
+        <input type='text' className={styles.dem} id='useremail' spellCheck={false} onChange={handlechange} name='email' value={formdata.email} required />
         <div className={styles.showerror}>{email}</div>
         <div className={styles.yourname}>Password</div>
-        <input type='password' id='userpassword' spellCheck={false} onChange={handlechange} name='password' value={formdata.password} required />
+        <input type='password' id='userpassword' spellCheck={false} onChange={handlechange} name='password' value={formdata.password} className={styles.pass} required />
         <div className={styles.showerror}>{password}</div>
         <div className={styles.authmobile}>
           By enrolling your mobile phone number, you consent to receive automated security notifications

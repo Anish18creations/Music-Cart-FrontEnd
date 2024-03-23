@@ -60,24 +60,26 @@ body {
         margin-top: 0.5vh;
     }
 
-    input[type='text'] {
+    .dem {
         border-radius: 0.5rem;
         border: 0.125rem solid #B6B6B6;
         padding-left: 0.5vw;
         outline: none;
         width: 21vw;
         margin-left: 2vw;
-        margin-top: 0.1vh;
+        margin-top: 0.5vh;
+        height: 4vh;
     }
 
-    input[type='password'] {
+    .pass {
         border-radius: 0.5rem;
         border: 0.125rem solid #B6B6B6;
         padding-left: 0.5vw;
         outline: none;
         width: 21vw;
+        height: 4vh;
         margin-left: 2vw;
-        margin-top: 0.1vh;
+        margin-top: 0.5vh;
     }
 
     .authmobile {
@@ -98,7 +100,7 @@ body {
         border-radius: 0.5rem;
         background: #2E0052;
         text-align: center;
-        width: 17.7vw;
+        width: 21.7vw;
         height: 4vh;
         font-family: 'Roboto', sans-serif;
         font-size: 0.8rem;
@@ -268,27 +270,29 @@ body {
         font-weight: 500;
         letter-spacing: 0em;
         color: black;
-        margin-top: 0.5vh;
+        margin-top: 0.7vh;
     }
 
-    input[type='text'] {
+    .dem {
         border-radius: 0.25rem;
         border: 0.065rem solid #B6B6B6;
         padding-left: 2vw;
         outline: none;
         width: 84vw;
+        height: 4vh;
         margin-left: 2vw;
-        margin-top: 0.1vh;
+        margin-top: 0.4vh;
     }
 
-    input[type='password'] {
+    .pass {
         border-radius: 0.25rem;
         border: 0.065rem solid #B6B6B6;
         padding-left: 2vw;
         outline: none;
         width: 84vw;
+        height: 4vh;
         margin-left: 2vw;
-        margin-top: 0.1vh;
+        margin-top: 0.4vh;
     }
 
     .authmobile {

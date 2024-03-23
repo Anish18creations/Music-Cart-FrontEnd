@@ -132,7 +132,7 @@ body {
     height: 3vh;
 }
 
-input[type='text'] {
+.searcharea {
     width: 80vw;
     border: none;
     outline: none;
