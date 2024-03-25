@@ -94,14 +94,14 @@ body {
     text-align: center;
 }
 
-.navbar , .confirm2 , .confirm3 {
+.navbar , .confirm2 , .confirm3 , .bottom2{
     display: none;
 }
 }
 
 @media (max-width: 360px) {
 
-.confirm , .signupbgimg2 , .music2 , .title2{
+.confirm , .signupbgimg2 , .music2 , .title2 , .bottom{
     display: none;
 }
 
@@ -145,19 +145,43 @@ body {
     box-shadow: 0.8rem 1rem 1.4rem 0.125rem #0000001C;
 }
 
-.bottom{
+.bottom2{
     position: absolute;
     bottom: 0vh;
     width: 100vw;
-    height: 5vh;
-    background: #2E0052;
-    color: #FFFFFF;
+    height: 8vh;
     font-family: 'Roboto', sans-serif;
-    font-size: 0.85rem;
+    font-size: 0.65rem;
     font-weight: 500;
     letter-spacing: 0em;
     text-align: center;
     padding-top: 2vh;
+    border-radius: 0.065rem;
+    border-top: 0.065rem solid #C8C8C8;
+    color: black;
+    display: flex;
+}
+
+.noitems{
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0em;
+    color: white;
+    margin-left: 8.4vw;
+    margin-top: -3.3vh;
+}
+
+.horizontalbar{
+    width: 10vw;
+    background: #2E0052;
+    margin-top: -2vh;
+    border: 0.125rem solid white;
+    border-radius: 0.250rem;
+}
+
+.horizontalbar:hover{
+    border: 0.125rem solid green;
 }
 
 .confetti{

@@ -6,6 +6,7 @@ import InvoicePage from './pages/Invoice/InvoicePage';
 import OrderConfirmPage from './pages/OrderConfirm/OrderConfirmPage';
 import PlaceOrderPage from './pages/PlaceOrder/PlaceOrderPage';
 import ProductDetailPage from './pages/ProductDetail/ProductDetailPage';
+import ViewCartPage from "./pages/ViewCart/ViewCartPage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/orderconfirm" element={<OrderConfirmPage />} />
         <Route path="/placeorder" element={<PlaceOrderPage />} />
         <Route path="/product-detail" element={<ProductDetailPage />} /> {/* scope for /:id is there */}
+        <Route path="/view-cart" element={<ViewCartPage />} />
       </Routes>
     </BrowserRouter>
   );
