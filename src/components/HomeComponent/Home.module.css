@@ -280,7 +280,7 @@ body {
     font-size: 1rem;
     font-weight: 600;
     color: #000000;
-    margin-top: 1.5vh;
+    margin-top: 0.3vh;
     margin-left: 1vw;
 }
 
@@ -290,7 +290,7 @@ body {
     right: 1vw;
     z-index: 1000;
     width: 15vw;
-    height: 38vh;
+    height: fit-content;
     border-radius: 1.5rem;
     box-shadow: 0rem 0rem 1.25rem 0rem #0000005E;
 }
@@ -341,7 +341,7 @@ body {
 
 .feedbacktext {
     margin-left: 1vw;
-    margin-top: 1vh;
+    margin-top: 0.5vh;
     width: 12.6vw;
     height: 14.5vh;
     border-radius: 0.3rem;
@@ -356,6 +356,29 @@ body {
     padding-top: 1vh;
     resize: none;
     z-index: 0;
+}
+
+.error {
+    width: fit-content;
+    height: fit-content;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0em;
+    margin-left: 1vw;
+    color: #FF0000;
+}
+
+.error2 {
+    width: fit-content;
+    height: fit-content;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0em;
+    margin-left: 1.2vw;
+    margin-top: -0.6vh;
+    color: #FF0000;
 }
 
 .submit {

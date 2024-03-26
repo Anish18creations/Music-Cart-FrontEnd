@@ -9,11 +9,14 @@ import listview from '../../assets/images/listview.png';
 import whitecart from '../../assets/images/whitecart.png';
 import feedback from '../../assets/images/feedback.png';
 import { useNavigate } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function Home() {
 
   const navigate = useNavigate();
   const [init, setInit] = useState();
+  const [typeoffeedback, setTypeoffeedback] = useState('');
+  const [feedbackcontent, setFeedbackcontent] = useState('');
 
   useEffect(() => {
 
@@ -33,6 +36,48 @@ export default function Home() {
   const setfeedbackchoice = (i) => {
     document.getElementById('choicetype').innerHTML = i;
     document.getElementById('feedbackchoice').style.visibility = 'hidden';
+    document.getElementById('feedbacktypecontainer').style.borderColor = '#919191';
+    setTypeoffeedback('');
+  }
+
+  const submit = () => {
+    let b = true;
+
+    if (document.getElementById('choicetype').innerHTML == 'Choose the type') {
+      document.getElementById('feedbacktypecontainer').style.borderColor = '#FF0E0E';
+      setTypeoffeedback('*Required Field');
+      b = false;
+    }
+
+    if (document.getElementById('textfeedback').value == '') {
+      document.getElementById('textfeedback').style.borderColor = '#FF0E0E';
+      setFeedbackcontent('*Required Field');
+      b = false;
+    }
+
+    if (document.getElementById('textfeedback').value != '') {
+      if (!document.getElementById('textfeedback').value.trim()) {
+        document.getElementById('textfeedback').style.borderColor = '#FF0E0E';
+        setFeedbackcontent('*Please provide a proper feedback');
+        b = false;
+      }
+    }
+
+    if (b == true) {
+      //api call has to be made
+      if (document.getElementById('choicetype').innerHTML != 'Choose the type')
+        document.getElementById('choicetype').innerHTML = 'Choose the type';
+
+      if (document.getElementById('textfeedback').value != '')
+        document.getElementById('textfeedback').value = '';
+
+      toast.success('Your feedback has been received!!');
+
+      setTimeout(() => {
+        document.getElementById('feedback-container').style.visibility = 'hidden';
+      }, 2000);
+
+    }
   }
 
   return (
@@ -62,7 +107,8 @@ export default function Home() {
             </div>
           </>
           :
-          ""}
+          ""
+        }
       </div>
       <div className={styles.ad}>
         <div className={styles.grab}>
@@ -92,7 +138,7 @@ export default function Home() {
         <>
           <div className={styles.feedbackcontainer} id='feedback-container' style={{ visibility: 'hidden' }}>
             <div className={styles.typeoffeedback}>Type of feedback</div>
-            <div className={styles.typeselect} onClick={() => openorclosepopup('feedbackchoice')} >
+            <div className={styles.typeselect} onClick={() => openorclosepopup('feedbackchoice')} id='feedbacktypecontainer' >
               <div id='choicetype' style={{ width: '8vw' }}>Choose the type</div>
               <div style={{ marginLeft: '3.5vw' }}>v</div>
             </div>
@@ -103,9 +149,12 @@ export default function Home() {
               <div className={styles.line3}></div>
               <div style={{ paddingLeft: '0.5vw', paddingTop: '1vh' }} onClick={() => setfeedbackchoice('Query')}>Query</div>
             </div>
+            <div className={styles.error}>{typeoffeedback}</div>
             <div className={styles.feedback}>Feedback</div>
-            <textarea className={styles.feedbacktext} spellCheck={false} placeholder='Type your feedback'></textarea>
-            <div className={styles.submit}>Submit</div>
+            <textarea className={styles.feedbacktext} spellCheck={false} placeholder='Type your feedback' id='textfeedback' onChange={() => { document.getElementById('textfeedback').style.borderColor = '#919191'; setFeedbackcontent(''); }}></textarea>
+            <div className={styles.error2}>{feedbackcontent}</div>
+            <div className={styles.submit} onClick={() => submit()}>Submit</div><Toaster />
+            <div style={{ height: '1vh' }} />
           </div>
           <div className={styles.userfeedback} onClick={() => openorclosepopup('feedback-container')}>
             <img src={feedback} alt='' className={styles.feedbackimage} />
