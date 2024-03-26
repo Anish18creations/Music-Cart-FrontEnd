@@ -10,6 +10,7 @@ import whitecart from '../../assets/images/whitecart.png';
 import feedback from '../../assets/images/feedback.png';
 import { useNavigate } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
+import { addFeedback } from '../../apis/auth';
 
 export default function Home() {
 
@@ -40,7 +41,7 @@ export default function Home() {
     setTypeoffeedback('');
   }
 
-  const submit = () => {
+  const submit = async () => {
     let b = true;
 
     if (document.getElementById('choicetype').innerHTML == 'Choose the type') {
@@ -64,14 +65,19 @@ export default function Home() {
     }
 
     if (b == true) {
-      //api call has to be made
+
+      const id = localStorage.getItem('userid');
+      const feedbacktype = document.getElementById('choicetype').innerHTML;
+      const feedbackcontent = document.getElementById('textfeedback').value;
+      const response = await addFeedback({ id, feedbacktype, feedbackcontent });
+
       if (document.getElementById('choicetype').innerHTML != 'Choose the type')
         document.getElementById('choicetype').innerHTML = 'Choose the type';
 
       if (document.getElementById('textfeedback').value != '')
         document.getElementById('textfeedback').value = '';
 
-      toast.success('Your feedback has been received!!');
+      toast.success(response.message);
 
       setTimeout(() => {
         document.getElementById('feedback-container').style.visibility = 'hidden';
