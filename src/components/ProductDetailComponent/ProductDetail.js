@@ -17,6 +17,7 @@ export default function ProductDetail() {
   const [image2, setImage2] = useState();
   const [image3, setImage3] = useState();
   const [image4, setImage4] = useState();
+  let [cart, setCart] = useState();
 
   useEffect(() => {
     fetchproductdetails();
@@ -44,6 +45,10 @@ export default function ProductDetail() {
     setImage2(response.images[1]);
     setImage3(response.images[2]);
     setImage4(response.images[3]);
+    if (localStorage.getItem('cart-count'))
+      setCart(localStorage.getItem('cart-count'));
+    else
+      setCart(0);
   }
 
   const changeimage1 = () => {
@@ -68,6 +73,29 @@ export default function ProductDetail() {
     const temp = productfetch.images[3];
     productfetch.images[3] = productfetch.images[0];
     productfetch.images[0] = temp;
+  }
+
+  const addtocart = () => {
+    //first add product to cart and then go to view cart page
+    //raises a toast message if any particular product count crosses 8 and makes product unavailable
+    if (localStorage.getItem('token')) {
+      if (cart < 8) {
+        setCart(++cart);
+        localStorage.setItem('cart-count', cart);
+        setTimeout(() => {
+          navigate('/view-cart');
+        }, 1000);
+      }
+      else
+        toast.error("No more quantities of this product can be added!!");
+    }
+    else {
+      toast.error("Please login or signup to add and buy products!!", { duration: 1000 });
+      setTimeout(() => {
+        navigate('/login');
+      }, 2000);
+    }
+
   }
 
   return (
@@ -105,11 +133,17 @@ export default function ProductDetail() {
             <>
               <div className={styles.cart}>
                 <img src={whitecart} className={styles.whitecart} alt='' />
-                <div className={styles.viewcart}>View Cart&ensp;0</div>
+                <div className={styles.viewcart}>View Cart&ensp;{cart}</div>
               </div>
             </>
             :
-            ""
+            <>
+              <div className={styles.cart}>
+                <img src={whitecart} className={styles.whitecart} alt='' />
+                <div className={styles.viewcart}>View Cart&ensp;0
+                </div>
+              </div>
+            </>
         }
       </div>
       <div className={styles.back} onClick={() => { navigate('/') }}>Back to products</div>
@@ -170,16 +204,19 @@ export default function ProductDetail() {
                 </ul>
                 <div style={{ display: 'flex' }}>
                   <div className={styles.available}>Available -&nbsp;</div>
-                  <div className={styles.available} style={{ fontWeight: '400' }}>{productfetch.
-                    avalaibility}</div>
+                  <div className={styles.available} style={{ fontWeight: '400' }}>{
+                    cart == 8 ? 'Not In stock' :
+                      productfetch.
+                        avalaibility
+                  }</div>
                 </div>
                 <div style={{ display: 'flex', marginTop: '2.3vh' }}>
                   <div className={styles.available}>Brand -&nbsp;</div>
                   <div className={styles.available} style={{ fontWeight: '400' }}>{productfetch.brand}</div>
                 </div>
                 <div style={{ display: 'flex' }}>
-                  <div className={styles.addtocart}>Add to cart</div>
-                  <div className={styles.addtocart} style={{ background: '#FFB800', marginLeft: '1vw' }}>Buy Now</div>
+                  <div className={styles.addtocart} onClick={() => addtocart()}>Add to cart</div><Toaster />
+                  <div className={styles.addtocart} style={{ background: '#FFB800', marginLeft: '1vw' }} onClick={() => addtocart()}>Buy Now</div><Toaster />
                 </div>
               </div>
             </div>
