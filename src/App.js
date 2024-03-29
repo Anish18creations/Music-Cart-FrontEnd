@@ -18,7 +18,7 @@ function App() {
         <Route path="/invoice" element={<InvoicePage />} /> { /* another route with /invoice/:id could be there */}
         <Route path="/orderconfirm" element={<OrderConfirmPage />} />
         <Route path="/placeorder" element={<PlaceOrderPage />} />
-        <Route path="/product-detail" element={<ProductDetailPage />} /> {/* scope for /:id is there */}
+        <Route path="/product-detail/:id" element={<ProductDetailPage />} /> 
         <Route path="/view-cart" element={<ViewCartPage />} />
       </Routes>
     </BrowserRouter>
