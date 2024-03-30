@@ -18,10 +18,11 @@ export default function ProductDetail() {
   const [image3, setImage3] = useState();
   const [image4, setImage4] = useState();
   let [cart, setCart] = useState();
+  let [products, setProducts] = useState([]);
 
   useEffect(() => {
     fetchproductdetails();
-  }, []);
+  }, [products]);
 
   const fetchproductdetails = async () => {
     const productid = window.location.pathname?.split("/").slice(-1)[0];
@@ -45,10 +46,12 @@ export default function ProductDetail() {
     setImage2(response.images[1]);
     setImage3(response.images[2]);
     setImage4(response.images[3]);
-    if (localStorage.getItem('cart-count'))
-      setCart(localStorage.getItem('cart-count'));
-    else
-      setCart(0);
+
+    setProducts(JSON.parse(localStorage.getItem('Cart')));
+    const object = products.find((object) => object.pname == productfetch.product_name);
+    if (object) {
+      setCart(object.count);
+    }
   }
 
   const changeimage1 = () => {
@@ -81,10 +84,14 @@ export default function ProductDetail() {
     if (localStorage.getItem('token')) {
       if (cart < 8) {
         setCart(++cart);
-        localStorage.setItem('cart-count', cart);
         setTimeout(() => {
           navigate('/view-cart');
         }, 1000);
+        products.map((item) => {
+          if (item.pname == productfetch.product_name)
+            item.count = cart;
+        })
+        localStorage.setItem('Cart', JSON.stringify(products));
       }
       else
         toast.error("No more quantities of this product can be added!!");

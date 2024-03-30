@@ -18,11 +18,74 @@ export default function Home() {
   const [init, setInit] = useState();
   const [typeoffeedback, setTypeoffeedback] = useState('');
   const [feedbackcontent, setFeedbackcontent] = useState('');
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
 
     if (localStorage.getItem('username')) {
       setInit(localStorage.getItem('username').split(" ").map((word) => word[0]).join(''));
+    }
+
+    if(localStorage.getItem('Cart')){
+      setProducts(JSON.parse(localStorage.getItem('Cart')));
+    }
+    else
+    {
+      const myArray = [
+        {
+          pname: 'Sony WH-1000XM4',
+          count: 0,
+        },
+        {
+          pname: 'JBL Quantum 600',
+          count: 0,
+        },
+        {
+          pname: 'Zebronics Zeb-Thunder',
+          count: 0,
+        },
+        {
+          pname: 'pTron Studio Lite',
+          count: 0,
+        },
+        {
+          pname: 'Marshall Major III',
+          count: 0,
+        },
+        {
+          pname: 'bOAT Rockerz 510',
+          count: 0,
+        },
+        {
+          pname: 'Sony WH-XB900N',
+          count: 0,
+        },
+        {
+          pname: 'JBL Tune 500BT',
+          count: 0,
+        },
+        {
+          pname: 'ZEBRONICS Zeb-Duke',
+          count: 0,
+        },
+        {
+          pname: 'pTron Boom Ultima',
+          count: 0,
+        },
+        {
+          pname: 'Marshall Major II',
+          count: 0,
+        },
+        {
+          pname: 'bOAT Bassheads 900',
+          count: 0,
+        },
+        {
+          pname: 'Sony MDR-ZX110',
+          count: 0,
+        }
+      ];
+      localStorage.setItem('Cart' , JSON.stringify(myArray));
     }
 
   }, []);
