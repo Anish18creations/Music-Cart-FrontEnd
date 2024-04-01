@@ -35,54 +35,80 @@ export default function Home() {
         {
           pname: 'Sony WH-1000XM4',
           count: 0,
+          unit_price: 15000,
+          tot_price : 0,
         },
         {
           pname: 'JBL Quantum 600',
           count: 0,
+          unit_price: 12000,
+          tot_price : 0,
         },
         {
           pname: 'Zebronics Zeb-Thunder',
           count: 0,
+          unit_price: 749,
+          tot_price : 0,
         },
         {
           pname: 'pTron Studio Lite',
           count: 0,
+          unit_price: 5449,
+          tot_price : 0,
         },
         {
           pname: 'Marshall Major III',
           count: 0,
+          unit_price: 28000,
+          tot_price : 0,
         },
         {
           pname: 'bOAT Rockerz 510',
           count: 0,
+          unit_price: 1600,
+          tot_price : 0,
         },
         {
           pname: 'Sony WH-XB900N',
           count: 0,
+          unit_price: 12549,
+          tot_price : 0,
         },
         {
           pname: 'JBL Tune 500BT',
           count: 0,
+          unit_price: 3100,
+          tot_price : 0,
         },
         {
           pname: 'ZEBRONICS Zeb-Duke',
           count: 0,
+          unit_price: 1299,
+          tot_price : 0,
         },
         {
           pname: 'pTron Boom Ultima',
           count: 0,
+          unit_price: 299,
+          tot_price : 0,
         },
         {
           pname: 'Marshall Major II',
           count: 0,
+          unit_price: 4299,
+          tot_price : 0,
         },
         {
           pname: 'bOAT Bassheads 900',
           count: 0,
+          unit_price: 899,
+          tot_price : 0,
         },
         {
           pname: 'Sony MDR-ZX110',
           count: 0,
+          unit_price: 990,
+          tot_price : 0,
         }
       ];
       localStorage.setItem('Cart' , JSON.stringify(myArray));

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './ViewCart.module.css';
 import phonecall from '../../assets/images/phonecall.png';
 import toast, { Toaster } from 'react-hot-toast';
@@ -10,6 +10,41 @@ import { useNavigate } from 'react-router-dom';
 export default function ViewCart() {
 
   const navigate = useNavigate();
+  let [total_price , setTotal_price] = useState(0);
+  let [countitems , setCountitems] = useState(0);
+  let [conveniencefee , setConveniencefee] = useState(0);
+  let [totalamount , setTotalamount] = useState(0);
+  let [objects, setObjects] = useState([]);
+  let [products , setProducts] = useState([]);
+  let calc = [];
+  let obj;
+
+  useEffect(()=>{
+    calc = JSON.parse(localStorage.getItem('Cart'));
+    calc.map((item) => {
+     if(item.count > 0)
+     {
+      total_price = total_price + item.tot_price;
+      setTotal_price(total_price);
+      countitems = countitems + item.count;
+      setCountitems(countitems);
+      setConveniencefee(45*countitems);
+      totalamount = totalamount + (45*item.count) + item.tot_price;
+      setTotalamount(totalamount);
+     }
+     }
+     );
+
+     obj = JSON.parse(localStorage.getItem('Cart'));
+
+     obj.map((product) => {
+      if (product.count > 0){
+        products.push(product);
+        setProducts(...products);
+      }
+      });
+      setObjects(products);
+  },[]);
 
   return (
     <div>
@@ -51,30 +86,54 @@ export default function ViewCart() {
         <div className={styles.mycart}>My Cart</div>
       </div>
       <div style={{ display: 'flex' }}>
-        <div>
-          <hr className={styles.firsthorizontalline}></hr>
+        <div className={styles.container}>
+        <hr className={styles.firsthorizontalline}></hr>
+          <div className={styles.displayproducts}>
+            {objects?.map((item , index) => (
+                 
+                 <>
+                  
+                   <div style={{display:'flex' , width:'60vw' , height:'20vh'}}>
+                     <div style={{color:'black' , width:'20vw' , height:'4vh'}}>{item.pname}</div>
+                     
+                   </div>
+                 </>
+                 
+               ))}
+          </div>
+          <div style={{height:'8vh'}}/>
+          <hr className={styles.secondhorizontalline}></hr>
+          <div style={{display:'flex'}}>
+              <div></div>
+              <div></div>
+          </div>
         </div>
+        <div className={styles.verticalbar}></div>
+        <div>
         <div style={{ marginLeft: '2vw', marginTop: '1vh' }}>
           <div className={styles.pricedetails}>PRICE DETAILS</div>
         </div>
-      </div>
+      
       <div style={{ display: 'flex' }}>
-        <div className={styles.mrp}>Total MRP</div>
-        <div className={styles.mrp} style={{ marginLeft: '10vw' }}>₹3500</div>
+        <div className={styles.mrp} style={{marginTop:'2vh'}}>Total MRP</div>
+        <div className={styles.mrp} style={{ marginLeft: '10vw',marginTop:'2vh'}}>₹{total_price}</div>
       </div>
-      <div style={{ display: 'flex', marginTop: '1vh' }}>
+      <div style={{ display: 'flex', marginTop: '2vh' }}>
         <div className={styles.mrp}>Discount on MRP</div>
         <div className={styles.mrp} style={{ marginLeft: '6.1vw' }}>₹0</div>
       </div>
-      <div style={{ display: 'flex', marginTop: '1vh' }}>
+      <div style={{ display: 'flex', marginTop: '2vh' }}>
         <div className={styles.mrp}>Convenience Fee</div>
-        <div className={styles.mrp} style={{ marginLeft: '6.3vw' }}>₹45</div>
+        <div className={styles.mrp} style={{ marginLeft: '6.3vw' }}>₹{conveniencefee}</div>
       </div>
-      <div style={{ display: 'flex', marginTop: '13vh' }}>
+      <div style={{ display: 'flex', marginTop: '4vh' }}>
         <div className={styles.mrp} style={{ fontWeight: '500', fontSize: '1.3rem' }}>Total Amount</div>
-        <div className={styles.mrp} style={{ marginLeft: '7vw', marginTop: '1.2vh' }}>₹3545</div>
+        <div className={styles.mrp} style={{ marginLeft: '7vw', marginTop: '1.5vh' }}>₹{totalamount}</div>
       </div>
       <div className={styles.placeorder} onClick={() => { navigate('/placeorder') }}>PLACE ORDER</div>
+      
+      </div>
+      </div>
       <div className={styles.bottom}>Musicart | All rights reserved</div>
     </div>
   )

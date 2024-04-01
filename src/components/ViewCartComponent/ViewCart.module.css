@@ -164,6 +164,35 @@ body {
     height: 0vh;
 }
 
+.secondhorizontalline{
+    margin-left: 5vw;
+    margin-bottom: 10vh;
+    border: 0.12rem solid #E1E1E1;
+    width: 70.5vw;
+    height: 0vh;
+}
+
+.displayproducts{
+    margin-top: 1vh;
+    margin-left: 6.5vw;
+    width: 69vw;
+    max-height: 47vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+}
+
+.container{
+    width: 75vw;
+    height: fit-content;
+}
+
+.verticalbar{
+    border: 0.12rem solid #E1E1E1;
+    width: 0vw;
+    margin-left: 0.7vw;
+}
+
 .pricedetails {
     font-family: 'Roboto', sans-serif;
     font-size: 1.2rem;
@@ -172,7 +201,7 @@ body {
 }
 
 .mrp {
-    margin-left: 77.3vw;
+    margin-left: 2vw;
     margin-top: 1vh;
     font-family: 'Roboto', sans-serif;
     font-size: 1.1rem;
@@ -181,7 +210,7 @@ body {
 }
 
 .placeorder {
-    margin-left: 77.3vw;
+    margin-left: 2vw;
     margin-top: 4vh;
     font-family: 'Roboto', sans-serif;
     font-size: 1.2rem;

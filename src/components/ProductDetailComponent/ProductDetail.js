@@ -60,6 +60,8 @@ export default function ProductDetail() {
     const temp = productfetch.images[1];
     productfetch.images[1] = productfetch.images[0];
     productfetch.images[0] = temp;
+    console.log(true);
+    console.log(image1 , image2);
   }
 
   const changeimage2 = () => {
@@ -79,8 +81,6 @@ export default function ProductDetail() {
   }
 
   const addtocart = () => {
-    //first add product to cart and then go to view cart page
-    //raises a toast message if any particular product count crosses 8 and makes product unavailable
     if (localStorage.getItem('token')) {
       if (cart < 8) {
         setCart(++cart);
@@ -88,8 +88,10 @@ export default function ProductDetail() {
           navigate('/view-cart');
         }, 1000);
         products.map((item) => {
-          if (item.pname == productfetch.product_name)
+          if (item.pname == productfetch.product_name){
             item.count = cart;
+            item.tot_price = item.unit_price * cart;
+          }
         })
         localStorage.setItem('Cart', JSON.stringify(products));
       }
